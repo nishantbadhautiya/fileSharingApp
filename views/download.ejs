@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Download Page</h1>
+    </div>
+    <div class="container">
+        <% if(locals.error){ %>
+            <h2><%= locals.error %></h2>
+            <% } else { %>
+                <h2>Your file is Ready to Download</h2>
+                <p>Link Expires in 24 hours</p>
+                <h4><%=filename %></h4>
+                <small><%=parseInt(filesize/1000)%>KB</small><br>
+                <a href="<%=downloadLink %>">Download File</a>
+                <% } %>
+    </div>
+</body>
+</html>
